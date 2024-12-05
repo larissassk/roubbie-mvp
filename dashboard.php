@@ -5,79 +5,168 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Roubbie Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .dashboard-container {
+            padding: 20px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            margin: 10px 0;
+            background: #f4f4f4;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .btn-popup {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-popup:hover {
+            background: #45a049;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <?php require_once 'C:\xampp\htdocs\roubbie\includes\header.php'; ?>
+    <?php require_once 'includes/header.php'; ?>
 
     <div class="dashboard-container">
-        <header class="header" role="banner">
-            <!-- <h1>Bem-vindo, <?php echo htmlspecialchars($user_id); ?>!</h1> -->
-        </header>
-
-        <main class="card-grid" role="main" aria-label="Dashboard de atividades"> 
-            <!-- Eventos -->
-            <div class="card" aria-labelledby="eventos-title">
-                <h2 id="eventos-title">Eventos</h2>
-                <p>Veja e organize seus eventos próximos.</p>
-                <img src="img/icones/rotina.png" width="100" height="100" class="icon" alt="Ícone de Eventos" style="display: block; margin: 0 auto;">
-                <a href="projeto_fullcalendar_js_php-master/status-rotina.php" class="details-button" aria-label="Ver Eventos">Ver Eventos</a>
+        <main class="card-grid">
+            <div class="card">
+                <h2>Status</h2>
+                <div class="profile">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" alt="Foto de perfil" class="profile-img">
+                    <p>Ayla</p>
+                </div>
             </div>
 
-            <!-- Compromissos -->
-            <div class="card" aria-labelledby="compromissos-title">
-                <h2 id="compromissos-title">Compromissos</h2>
-                <p>Confira e gerencie seus compromissos agendados.</p>
-                <img src="img/icones/agenda.png" width="100" height="100" class="icon" alt="Ícone de Compromissos" style="display: block; margin: 0 auto;">
-                <a href="projeto_fullcalendar_js_php-master/index.php" class="details-button" aria-label="Ver Compromissos">Ver Compromissos</a>
+            <div class="card">
+                <h2>Tarefas Pendentes</h2>
+                <ul class="task-list">
+                    <li>Exemplo de tarefa 1</li>
+                    <li>Exemplo de tarefa 2</li>
+                </ul>
             </div>
 
-            <!-- Tarefas Pendentes -->
-            <div class="card" aria-labelledby="tarefas-title">
-                <h2 id="tarefas-title">Tarefas Pendentes</h2>
-                <p>Gerencie suas tarefas e acompanhe o progresso.</p>
-                <img src="img/icones/home.png" width="100" height="100" class="icon" alt="Ícone de Tarefas Pendentes" style="display: block; margin: 0 auto;">
-                <a href="projeto_fullcalendar_js_php-master/status-rotina.php/#tarefas" class="details-button" aria-label="Ver Tarefas Pendentes">Ver Tarefas</a>
+            <div class="card">
+                <h2>Agenda</h2>
+                <button class="btn-popup" aria-label="Ver Agenda" onclick="showPopup('agenda')">Ver Agenda</button>
             </div>
 
-            <!-- Rotina -->
-            <div class="card" aria-labelledby="rotina-title">
-                <h2 id="rotina-title">Rotina</h2>
-                <p>Visite sua rotina e ajuste conforme necessário.</p>
-                <img src="img/icones/rotina.png" width="100" height="100" class="icon" alt="Ícone de Rotina" style="display: block; margin: 0 auto;">
-                <a href="projeto_fullcalendar_js_php-master/sisrot.php" class="details-button" aria-label="Ver Minha Rotina">Minha Rotina</a>
+            <div class="card">
+                <h2>Hobbies Praticados</h2>
+                <p>Você praticou 5 horas esta semana!</p>
             </div>
 
-            <!-- Hobbies -->
-            <div class="card" aria-labelledby="hobbies-title">
-                <h2 id="hobbies-title">Meus obbies</h2>
-                <p>Descubra e pratique novos hobbies.</p>
-                <img src="img/icones/hobbies.png" width="100" height="100" class="icon" alt="Ícone de Hobbies" style="display: block; margin: 0 auto;">
-                <a href="quiz.php" class="details-button" aria-label="Ver Hobbies">Ver Hobbies</a>
+            <div class="card">
+                <h2>Gasto de Tempo</h2>
+                <canvas id="timeChart" aria-label="Gráfico de Gasto de Tempo"></canvas>
             </div>
 
+            <div class="card">
+                <h2>Resumo Semanal</h2>
+                <p>Você completou 80% das suas metas!</p>
+            </div>
         </main>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js"></script>
-    <footer style="font-size: small;">
-    <div id="quotes">
-            <p>"A felicidade não está na felicidade em si, mas na busca dela!"</p>
-            <a href="https://br.freepik.com/search" target="_blank">Ícone de Kiranshastry</a>
-            <a href="https://br.freepik.com/search" target="_blank">Ícone de Iconmas</a>
-            <a href="https://br.freepik.com/search" target="_blank">Ícone de Afif Fudin</a>
-            <a href="https://br.freepik.com/search" target="_blank">Ícone de Elzicon</a>
-            <a href="https://br.freepik.com/icones/rotina" target="_blank">Ícone de Freepik</a>
-        </div>
-    </footer>
+    <script src="js/chart.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("timeChart").getContext("2d");
+            new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: ["Hobbies", "Trabalho", "Descanso"],
+                    datasets: [{
+                        data: [10, 50, 40],
+                        backgroundColor: ["#4CAF50", "#FF9800", "#FFC107"],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: "bottom",
+                            labels: {
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
