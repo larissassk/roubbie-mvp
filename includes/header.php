@@ -167,16 +167,16 @@ header{
                             <a class="nav-link click" href="dashboard.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click" href="http://localhost/roubbie/projeto_fullcalendar_js_php-master/index.php">Agenda</a>
+                            <a class="nav-link click" href="http://localhost/roubbie-mvp/projeto_fullcalendar_js_php-master/index.php">Agenda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click" href="http://localhost/roubbie/projeto_fullcalendar_js_php-master/sisrot.php">Rotina</a>
+                            <a class="nav-link click" href="http://localhost/roubbie-mvp/projeto_fullcalendar_js_php-master/sisrot.php">Rotina</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link click" href="diario.php">Diário</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click" href="http://localhost/roubbie/quiz.php">Quiz</a>
+                            <a class="nav-link click" href="http://localhost/roubbie-mvp/quiz.php">Quiz</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link click" href="sobre.php">Sobre</a>
@@ -189,11 +189,11 @@ header{
                             <a class="nav-link dropdown-toggle navbar-icon bi-person" href="#" id="navbarUserDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menu do usuário"></a>
                             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarUserDropdownMenuLink">
                                 
-                                <li><a class="dropdown-item" href="http://localhost/roubbie/login-register/login.php"><i class="bi bi-person-fill">  </i>Log In</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/roubbie-mvp/AuthSystem/login.html"><i class="bi bi-person-fill">  </i>Log In</a></li>
 
-                                <li><a class="dropdown-item" href="http://localhost/roubbie/login-register/cadastro.php"><i class="bi bi-person-plus-fill">  </i>Register</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/roubbie-mvp/AuthSystem/cadastro.html"><i class="bi bi-person-plus-fill">  </i>Register</a></li>
 
-                                <li><a class="dropdown-item" href="/roubbie/login-register/logout.php"><i class="bi bi-box-arrow-right">  </i>Sign out</a></li>
+                                <li><a class="dropdown-item" href="/roubbie-mvp/login-register/logout.php"><i class="bi bi-box-arrow-right">  </i>Sign out</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -207,8 +207,8 @@ header{
         <ul>
             <li><a href="index.php" aria-label="Ir para a página inicial"><i class="bi bi-house"></i></a></li>
             <li><a href="http://localhost/roubbie/projeto_fullcalendar_js_php-master/index.php" aria-label="Ir para a agenda"><i class="bi bi-calendar-month"></i></a></li>
-            <li><a href="http://localhost/roubbie/diario.php" aria-label="Ir para a diario"><i class="bi bi-ui-checks-grid"></i></a></li>
-            <li><a href="http://localhost/roubbie/projeto_fullcalendar_js_php-master/sisrot.php" aria-label="Ir para a rotina"><i class="bi bi-ui-checks-grid"></i></a></li>
+            <li><a href="http://localhost/roubbie-mvp/diario.php" aria-label="Ir para a diario"><i class="bi bi-ui-checks-grid"></i></a></li>
+            <li><a href="http://localhost/roubbie-mvp/projeto_fullcalendar_js_php-master/sisrot.php" aria-label="Ir para a rotina"><i class="bi bi-ui-checks-grid"></i></a></li>
         </ul>
     </div>                
 
